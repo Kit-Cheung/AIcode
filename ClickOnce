@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ClickOnce Demo</title>
+</head>
+<body>
+<h1>ClickOnce Demo</h1>
+
+<!-- 嵌入 ClickOnce 应用程序启动器 -->
+<object id="myApp" type="application/x-ms-application" data="http://myappserver/myapp/myapp.application"></object>
+
+<!-- 提供一个按钮，让用户手动启动应用程序 -->
+<button onclick="startMyApp()">启动应用程序</button>
+
+<script>
+function startMyApp() {
+var myApp = document.getElementById("myApp");
+myApp.style.display = "block"; // 显示应用程序启动器
+myApp.style.width = "0px";
+myApp.style.height = "0px";
+myApp.start(); // 启动应用程序
+}
+</script>
+</body>
+</html>
